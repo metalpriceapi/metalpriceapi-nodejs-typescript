@@ -1,0 +1,6 @@
+*.js
+*.js.map
+.npmrc
+node_modules/
+package-lock.json
+dist/
