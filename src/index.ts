@@ -51,6 +51,20 @@ class MetalpriceAPI {
     });
   }
 
+  public ohlc(base: string, currency: string, date?: string, unit?: string, dateType?: string): Promise<any> {
+    return axios({
+      url: 'https://api.metalpriceapi.com/v1/ohlc',
+      params: this.removeEmpty({
+        api_key: this.apiKey,
+        base: base,
+        currency: currency,
+        date: date,
+        unit: unit,
+        date_type: dateType,
+      }),
+    });
+  }
+
   public convert(from: string, to: string, amount: number, date?: string): Promise<any> {
     return axios({
       url: 'https://api.metalpriceapi.com/v1/convert',
@@ -98,6 +112,15 @@ class MetalpriceAPI {
         base,
         date,
       }),
+    });
+  }
+
+  public usage(): Promise<any> {
+    return axios({
+      url: 'https://api.metalpriceapi.com/v1/usage',
+      params: {
+        api_key: this.apiKey,
+      },
     });
   }
 }

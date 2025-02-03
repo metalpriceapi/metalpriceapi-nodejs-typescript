@@ -66,6 +66,21 @@ await api.fetchHistorical('2024-02-05', 'USD', ['XAU', 'XAG', 'XPD', 'XPT']);
 [Link](https://metalpriceapi.com/documentation#api_historical)
 
 ---
+#### fetchOHLC(base, currency, date, unit, dateType)
+
+- `base` <[string]> Optional. Pass in a base currency, defaults to USD.
+- `currency` <[string]> Required. Specify currency you would like to get OHLC for.
+- `date` <[string]> Required. Specify date to get OHLC for specific date using format `YYYY-MM-DD`.
+- `unit` <[string]> Optional. Pass in a unit, defaults to troy_oz.
+- `dateType` <[string]> Optional. Pass in a date type, overrides date parameter if passed in.
+
+```js
+await api.fetchOHLC('USD', 'XAU', '2024-02-06', 'troy_oz', null);
+```
+
+[Link](https://metalpriceapi.com/documentation#api_ohlc)
+
+---
 #### convert(from, to, amount, date)
 
 - `from` <[string]> Optional. Pass in a base currency, defaults to USD.
@@ -118,6 +133,15 @@ await api.carat('USD', '2024-02-06');
 ```
 
 [Link](https://metalpriceapi.com/documentation#api_carat)
+
+---
+#### usage()
+
+```js
+await api.usage();
+```
+
+[Link](https://metalpriceapi.com/documentation#api_usage)
 
 ---
 **[Official documentation](https://metalpriceapi.com/documentation)**

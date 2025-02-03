@@ -17,6 +17,9 @@ const api = new MetalpriceAPI(apiKey);
     result = await api.fetchHistorical('2024-02-05', 'USD', ['XAU', 'XAG', 'XPD', 'XPT']);
     console.log(result.data);
 
+    result = await api.ohlc('USD', 'XAU', '2024-02-06', 'troy_oz', null);
+    console.log(result.data);
+
     result = await api.convert('USD', 'EUR', 100, '2024-02-05');
     console.log(result.data);
 
@@ -27,6 +30,9 @@ const api = new MetalpriceAPI(apiKey);
     console.log(result.data);
 
     result = await api.carat('USD', '2024-02-06');
+    console.log(result.data);
+
+    result = await api.usage();
     console.log(result.data);
   } catch (error) {
     console.error('An error occurred:', error);
