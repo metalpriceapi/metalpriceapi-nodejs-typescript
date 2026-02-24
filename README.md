@@ -18,6 +18,9 @@ $ npm i metalpriceapi-ts
 import MetalpriceAPI from 'metalpriceapi-ts';
 const api = new MetalpriceAPI('SET_YOUR_API_KEY_HERE');
 
+// Or use EU server:
+// const api = new MetalpriceAPI('SET_YOUR_API_KEY_HERE', 'eu');
+
 await api.fetchLive('USD', ['XAU', 'XAG', 'XPD', 'XPT']);
 ```
 ---
@@ -31,6 +34,14 @@ In order to use this library, you must first call this function with an API key.
 
 ```js
 api.setAPIKey('SET_YOUR_API_KEY_HERE');
+```
+---
+#### setServer(server)
+
+- `server` <`'us'` | `'eu'`> Pass `'eu'` to use the EU server (`api-eu.metalpriceapi.com`), or `'us'` for the US server. Defaults to US if not specified.
+
+```ts
+api.setServer('eu');
 ```
 ---
 #### fetchSymbols()
